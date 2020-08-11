@@ -1,5 +1,7 @@
 # baumGesundheitszustand
 Anwendung zum Tracken des Gesundheitszustandes von Straßenbegleitgrün
+
+
 For building the project run:
 mvn clean package
 
