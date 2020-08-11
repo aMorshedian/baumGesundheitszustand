@@ -1,0 +1,19 @@
+version: "3"
+services:
+  redis-server:
+    container_name: redis-server
+    image: "redis"
+  postgres-server:
+    container_name: postgres-server
+    image: "postgres"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+  gesundheitszustand:
+    restart: on-failure
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis-server
+      - postgres-server
